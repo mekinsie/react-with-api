@@ -1,46 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { makeApiCall } from './../actions';
+
 
 class Books extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      books: []
-    };
+    // this.state = {
+    //   error: null,
+    //   isLoaded: false,
+    //   books: []
+    // };
   }
 
-  makeApiCall = () => {
-    fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=4L8BJ9opCmbogqfJpSrGZ6FRCzgk1rX0`).then(response => {
-      if(!response.ok){
-        throw Error(response.statusText);
-      } else { return response.json()}
-    }).then((jsonifiedResponse) => {
-      this.setState({
-        isLoaded: true,
-        books: jsonifiedResponse.results.books
-      });console.log(this.state.books)
-    })
-    .catch((error) => {
-      this.setState({
-        isLoaded: true,
-        error
-      });
-    });
-    console.log(this.state.books)
-  }
+  // makeApiCall = () => {
+  //   fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_API_KEY}`).then(response => {
+  //     if(!response.ok){
+  //       throw Error(response.statusText);
+  //     } else { return response.json()}
+  //   }).then((jsonifiedResponse) => {
+  //     this.setState({
+  //       isLoaded: true,
+  //       books: jsonifiedResponse.results.books
+  //     });console.log(this.state.books)
+  //   })
+  //   .catch((error) => {
+  //     this.setState({
+  //       isLoaded: true,
+  //       error
+  //     });
+  //   });
+  //   console.log(this.state.books)
+  // }
 
   componentDidMount() {
-    this.makeApiCall()
+    const {dispatch} = this.props;
+    dispatch(makeApiCall());
   }
 
   render() {
-    const { error, isLoaded, books } = this.state;
+    const { error, isLoading, books } = this.props;
     if (error) {
       return <React.Fragment>
         Error: {error.message}
       </React.Fragment>
-    } else if (!isLoaded) {
+    } else if (isLoading) {
       return <React.Fragment>
         Loading...
       </React.Fragment>
@@ -63,4 +67,12 @@ class Books extends React.Component {
   }
 }
 
-export default Books;
+const mapStateToProps = state => {
+  return {
+    books: state.books,
+    isLoading: state.isLoading,
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps)(Books);

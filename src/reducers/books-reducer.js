@@ -2,7 +2,7 @@ import * as c from './../actions/ActionTypes';
 
 const defaultState = {
   isLoading: false,
-  headlines: [],
+  books: [],
   error: null
 }
 
@@ -15,7 +15,7 @@ export default (state = defaultState, action) => {
     case c.GET_BOOKS_SUCCESS:
       return Object.assign({}, state, {
         isLoading: false,
-        books: action.books
+        books: action.books.books
       });
     case c.GET_BOOKS_FAILURE:
     return Object.assign({}, state, {
