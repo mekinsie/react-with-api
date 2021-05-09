@@ -12,7 +12,17 @@ export default (state = defaultState, action) => {
       return Object.assign({}, state, {
         isLoading: true
       });
-  default:
-    return state;
+    case c.GET_BOOKS_SUCCESS:
+      return Object.assign({}, state, {
+        isLoading: false,
+        books: action.books
+      });
+    case c.GET_BOOKS_FAILURE:
+    return Object.assign({}, state, {
+      isLoading: false,
+      error: action.error
+    });
+    default:
+      return state;
   }
 };
