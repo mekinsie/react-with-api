@@ -17,7 +17,10 @@ export const getBooksFailure = (error) => ({
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestBooks);
-    return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_API_KEY}`).then(response => response.json()).then((jsonifiedResponse) => {
+    return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_API_KEY}`).then(response => {
+      if (!response.ok){ throw Error(response.statusText) }
+      else { return response.json() }
+    }).then((jsonifiedResponse) => {
       dispatch(getBooksSuccess(jsonifiedResponse.results));
     }).catch((error) => {
       dispatch(getBooksFailure(error));
