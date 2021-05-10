@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# React with API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## By Mekinsie Callahan
 
-## Available Scripts
+* * *
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+The purpose of this project is to practice making API calls using fetch with React and Redux. I use a <a href="https://developer.nytimes.com/docs/books-product/1/overview">NYT API</a> that returns information about book reviews and the NYT best sellers lists.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* * *
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies used
 
-### `npm test`
+* React
+* npm
+* babel
+* JSX
+* CSS
+* Redux
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* * *
 
-### `npm run build`
+## Software Requirements
+* **npm is required to run this application** 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ <a href="https://www.npmjs.com/get-npm">Install npm here</a>  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* * *
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation Instructions
+1. Navigate to the desired directory where you would like to clone the project.
 
-### `npm run eject`
+2. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Type the following command into your terminal:
+```bash
+$ git clone https://github.com/mekinsie/tap-room-redux
+```
+3. Open the project in VSCode by typing the following in your terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+``` bash
+$ code .
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Get your API key from NYT
+4. Navigate to https://developer.nytimes.com/get-started and follow the instructions on how to obtain your own API key.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. Once you have your own API key, create a .env file in the root directory. Paste the following into the .env file (replace the brackets with your API key without quotes or brackets):
+```
+REACT_APP_API_KEY=[Your NYT API key goes here]
+```
+### Start a local server
+_**Note:** VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a>_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. To start a local server, type the following into your terminal:
+```
+$ npm start
+```
+5. Open your default browser and type "localhost:3000" into the search bar and press enter. Here, you will see the live server.
 
-## Learn More
+* * *
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
+> Mekinsie Callahan &copy; 2021  
+* * *
 
-### Code Splitting
+## Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Reach me via <a href="https://www.linkedin.com/in/mekinsie/" target="_blank">LinkedIn</a> or <a href="mailto:mekinsie.aja@gmail.com" target="_blank">email</a></li>.  
